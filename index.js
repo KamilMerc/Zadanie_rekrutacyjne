@@ -31,8 +31,8 @@ const fetchData = async(article) => {
 
                     Użyj odpowiednich tagów HTML do strukturyzacji treści
 
-                    Dodaj znaczniki <img> w miejscach, w których mogą pojawić się obrazy w artykule. Użyj atrybutu 'src' z przykładową ścieżką, np. 'image_placeholder.jpg', oraz dodaj atrybut 'alt' z dokładnym opisem obrazu np "Opis obrazu".
-                    Wstaw także podpisy pod obrazkami z wykorzystaniem tagu, które również będą dokładne.
+                    Dodaj znaczniki <img> w miejscach, w których mogą pojawić się obrazy w artykule. Użyj atrybutu 'src' ze ścieżką 'image_placeholder.jpg', oraz dodaj atrybut 'alt' z dokładnym opisem obrazu np 'Opis obrazu'.
+                    Wstaw także podpisy pod obrazkami z wykorzystaniem tagu 'figcaption', które również będą dokładne.
 
                     Nie generuj pełnej struktury HTML, nagłówka, ani znaczników <html> i <body> tylko zawartość do wstawienia między <body> i </body>.`,
                 },
