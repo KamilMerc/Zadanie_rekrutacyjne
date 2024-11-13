@@ -8,11 +8,11 @@ const openAI = new OpenAI({
 
 const readArticleFromFile = async (path) => {
     return fs.promises.readFile(path, 'utf8');
-}
+};
 
 const saveToFile = async (htmlContent, path) => {
     return fs.promises.writeFile(path, htmlContent, 'utf8')
-}
+};
 
 const fetchData = async(article) => {
     try {
@@ -28,9 +28,9 @@ const fetchData = async(article) => {
         return htmlContent;
 
     } catch (error) {
-        console.error("Error connecting to OpenAI");
+        console.error("Error connecting to OpenAI: ", error);
     }
-}
+};
 
 const main = async () => {
     try {
@@ -42,9 +42,9 @@ const main = async () => {
         const generatedHtml = await fetchData(article);
 
         await saveToFile(generatedHtml, outputPath);
-    }catch(error) {
+    }catch (error) {
         console.error("Error: ", error);
     }
-}
+};
 
 main();
