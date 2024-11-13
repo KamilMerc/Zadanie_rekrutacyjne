@@ -13,3 +13,21 @@ const readArticleFromFile = async (path) => {
 const saveToFile = async (htmlContent, path) => {
     return fs.promises.writeFile(path, htmlContent, 'utf8')
 }
+
+const fetchData = async(article) => {
+    try {
+        const response = await openAI.completions.create({
+            model: 'text-davinci-003',
+            prompt: `Przetwórz poniższy artykuł na kod HTML zgodny z wytycznymi:
+            ${article}\n\nDodaj znaczniki <img> z odpowiednimi miejscami dla grafik oraz podpisy do obrazków pod każdym obrazem.\n\nKod HTML:`,
+            max_tokens: 2000,
+            temperature: 0.5,
+        });
+
+        const htmlContent = response.choices[0].text.trim();
+        return htmlContent;
+
+    } catch (error) {
+        console.error("Error connecting to OpenAI");
+    }
+}
