@@ -6,10 +6,10 @@ const openAI = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
 
-async function readArticleFromFile(path) {
+const readArticleFromFile = async (path) => {
     return fs.promises.readFile(path, 'utf8');
 }
 
-async function saveToFile (htmlContent, path) {
+const saveToFile = async (htmlContent, path) => {
     return fs.promises.writeFile(path, htmlContent, 'utf8')
 }
