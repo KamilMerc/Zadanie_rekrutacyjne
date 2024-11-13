@@ -31,3 +31,18 @@ const fetchData = async(article) => {
         console.error("Error connecting to OpenAI");
     }
 }
+
+const main = async () => {
+    try {
+        const articlePath = './article.txt';
+        const outputPath = './artykul.html';
+
+        const article = await readArticleFromFile(articlePath);
+
+        const generatedHtml = await fetchData(article);
+
+        await saveToFile(generatedHtml, outputPath);
+    }catch(error) {
+        console.error("Error: ", error);
+    }
+}
