@@ -25,7 +25,16 @@ const fetchData = async(article) => {
                     role: 'system', content: 'Jesteś asystentem przetwarzającym artykuły na kod HTML.'
                 },
                 {
-                    role: 'user', content: `Przetwórz poniższy artykuł na kod HTML zgodny z wytycznymi:\n\n${article}\n\nDodaj znaczniki <img> z odpowiednimi miejscami dla grafik oraz podpisy do obrazków pod każdym obrazem.\n\nKod HTML:`
+                    role: 'user', content: `Przetwórz poniższy artykuł na kod HTML zgodny z wytycznymi:
+
+                    ${article}
+
+                    Użyj odpowiednich tagów HTML do strukturyzacji treści
+
+                    Dodaj znaczniki <img> w miejscach, w których mogą pojawić się obrazy w artykule. Użyj atrybutu 'src' z przykładową ścieżką, np. 'image_placeholder.jpg', oraz dodaj atrybut 'alt' z dokładnym opisem obrazu np "Opis obrazu".
+                    Wstaw także podpisy pod obrazkami z wykorzystaniem tagu, które również będą dokładne.
+
+                    Nie generuj pełnej struktury HTML, nagłówka, ani znaczników <html> i <body> tylko zawartość do wstawienia między <body> i </body>.`,
                 },
             ],
             max_tokens: 2000,
