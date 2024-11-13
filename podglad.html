@@ -6,6 +6,17 @@
     <title>Podgląd artykułu</title>
 </head>
 <body>
-    <div class="article"></div>
+    <div id="article"></div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('artykul.html')
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('article').innerHTML = data;
+                })
+                .catch(error => console.error("Error loading the article: ", error));
+        });
+    </script>
 </body>
 </html>
