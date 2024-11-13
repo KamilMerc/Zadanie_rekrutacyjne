@@ -1,6 +1,8 @@
 import OpenAI from 'openai/index.mjs';
-const fs = require('fs');
-require ('dotenv').config();
+import fs from 'fs';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const openAI = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
