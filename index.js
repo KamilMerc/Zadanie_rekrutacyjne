@@ -19,7 +19,7 @@ const saveToFile = async (htmlContent, path) => {
 const fetchData = async(article) => {
     try {
         const response = await openAI.chat.completions.create({
-            model: 'gpt-3.5-turbo-instruct',
+            model: 'gpt-3.5-turbo',
             messages: [
                 {
                     role: 'system', content: 'Jesteś asystentem przetwarzającym artykuły na kod HTML.'
