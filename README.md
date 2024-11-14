@@ -31,21 +31,21 @@ Jeżeli w folderze projektu znajduje się już plik 'artykul.html', program nadp
 # Application operation
 The application enables:
 1. Generating an article in HTML format based on a text file with the article and strictly defined guidelines, using the OpenAI model, and then saving it to the file 'artykul.html'. The 'index.js' file is responsible for this. 
-2. Preview of the generated article, the file 'preview.html' is responsible for this.
+2. Preview of the generated article, the file 'podglad.html' is responsible for this.
 
-Additionally, the application contains an empty template that allows you to manually paste the content of the article into the <body> section and preview it. The 'template.html' file is responsible for this.
+Additionally, the application contains an empty template that allows you to manually paste the content of the article into the <body> section and preview it. The 'szablon.html' file is responsible for this.
 
 
 # Startup instructions
 1. Clone the repository:
 git clone https://github.com/KamilMerc/Zadanie_rekrutacyjne.git 
 2. Go to the project folder:
-cd Recruitment_task
+cd Zadanie_rekrutacyjne
 3. Install all required dependencies:
-above sea level i 
+npm i 
 4. In the main project folder, create an '.env' file. Then go to the '.env_sample' file, copy the name of the environment variable, paste it into the '.env' file and assign your OpenAI API key to it.
-5. To generate the article.html file, run index.js:
+5. To generate the artykul.html file, run index.js:
 node index.js
 If there is already an 'artykul.html' file in the project folder, the program will overwrite it. If this file does not exist, the program will create it.
-6. To run a full preview of the article, right-click on the 'preview.html' file and then select 'Open with Live Server' (Visual Studio Code). If you don't have this option, install the 'Live Server' extension.
+6. To run a full preview of the article, right-click on the 'podglad.html' file and then select 'Open with Live Server' (Visual Studio Code). If you don't have this option, install the 'Live Server' extension.
 7. If you want to use an empty template, in the 'szablon.html' file, paste the article code from the 'artykul.html' file between the <body> and </body> tags. To start the article preview, proceed in the same way as in point 6.
